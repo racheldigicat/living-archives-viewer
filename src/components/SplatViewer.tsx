@@ -24,7 +24,8 @@ export function SplatViewer({ url }: SplatViewerProps) {
 
   useEffect(() => {
     const dropInViewer = new GaussianSplats3D.DropInViewer({
-      gpuAcceleratedSort: true,
+      gpuAcceleratedSort: false,
+      sharedMemoryForWorkers: false,
     });
 
     dropInViewer
