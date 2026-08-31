@@ -32,7 +32,9 @@ export function SplatViewer({ url }: SplatViewerProps) {
       .addSplatScene(urlRef.current, {
         splatAlphaRemovalThreshold: 5,
         position: [0, 0, 0],
-        rotation: [0, 0, 0, 1],
+        // Splat export's up-axis is flipped relative to Three.js — rotate
+        // 180° around X to flip it right-side up.
+        rotation: [1, 0, 0, 0],
         scale: [1, 1, 1],
       })
       .then(() => {

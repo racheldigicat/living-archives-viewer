@@ -26,17 +26,19 @@ export function Scene({ mode, activeHotspot, onSelectHotspot }: SceneProps) {
       <Environment preset="studio" />
 
       <Suspense fallback={null}>
-        {mode === "mesh" ? <MeshViewer url={MESH_URL} /> : <SplatViewer url={SPLAT_URL} />}
+        <group position={[0, -0.5, 0]}>
+          {mode === "mesh" ? <MeshViewer url={MESH_URL} /> : <SplatViewer url={SPLAT_URL} />}
 
-        {hotspots.map((h) => (
-          <Hotspot
-            key={h.id}
-            hotspot={h}
-            position={mode === "mesh" ? h.meshPosition : h.splatPosition}
-            active={activeHotspot === h.id}
-            onSelect={onSelectHotspot}
-          />
-        ))}
+          {hotspots.map((h) => (
+            <Hotspot
+              key={h.id}
+              hotspot={h}
+              position={mode === "mesh" ? h.meshPosition : h.splatPosition}
+              active={activeHotspot === h.id}
+              onSelect={onSelectHotspot}
+            />
+          ))}
+        </group>
       </Suspense>
 
       <OrbitControls makeDefault enablePan={false} minDistance={1.2} maxDistance={5} />
