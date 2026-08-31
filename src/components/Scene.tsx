@@ -9,8 +9,8 @@ import type { ViewMode } from "./ViewToggle";
 
 // Point these at your own assets once you've exported/compressed them
 // (see the build plan: "Prepare your two assets").
-const MESH_URL = "/models/dress-mesh.glb";
-const SPLAT_URL = "/models/dress-splat.ksplat";
+const MESH_URL = `${import.meta.env.BASE_URL}models/dress-mesh.glb`;
+const SPLAT_URL = `${import.meta.env.BASE_URL}models/dress-splat.ksplat`;
 
 type SceneProps = {
   mode: ViewMode;
