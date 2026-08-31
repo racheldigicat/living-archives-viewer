@@ -16,12 +16,8 @@ export default function App() {
   return (
     <div
       style={{
-        maxWidth: "900px",
+        maxWidth: "1400px",
         margin: "32px auto",
-        background: "var(--paper)",
-        borderRadius: "8px",
-        overflow: "hidden",
-        boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
         position: "relative",
       }}
     >
@@ -31,7 +27,7 @@ export default function App() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1.15fr 0.85fr",
+          gridTemplateColumns: "1.8fr 1fr",
         }}
         className="stage"
       >
@@ -39,11 +35,10 @@ export default function App() {
           style={{
             position: "relative",
             padding: "24px",
-            borderRight: "0.5px solid var(--hairline)",
           }}
         >
           <ViewToggle mode={mode} onChange={setMode} />
-          <div style={{ height: "320px" }}>
+          <div style={{ height: "70vh", minHeight: "480px" }}>
             <Scene mode={mode} activeHotspot={activeHotspot} onSelectHotspot={selectHotspot} />
           </div>
           <p

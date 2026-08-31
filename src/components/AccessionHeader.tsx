@@ -1,6 +1,6 @@
 export function AccessionHeader() {
   return (
-    <div style={{ padding: "18px 24px", borderBottom: "0.5px solid var(--hairline)" }}>
+    <div style={{ padding: "18px 24px" }}>
       <p
         style={{
           fontFamily: "var(--font-mono)",
